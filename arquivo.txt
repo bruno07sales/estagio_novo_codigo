@@ -1,0 +1,36 @@
+
+
+------------------------------
+Nome: Bruno
+Ferramenta: Alicate
+Adicional: Alicate quebrado
+
+------------------------------
+Nome: Fabio
+Ferramenta: Marreta de Desempenar Vidro
+Adicional: A Marreta não foi encontrada
+
+------------------------------
+Nome: 
+Ferramenta: 
+Adicional: 
+
+------------------------------
+Nome: Fabio
+Ferramenta: Marreta de desempenar vidro
+Marca: Vonder
+Validade: 24/07/2035
+Quantidade: 2
+Data de entrada: 02/10/2024
+Data de saída: 02/10/2024
+Adicional: Marreta não encontrada pelo estagiario
+
+------------------------------
+Nome: Bruno
+Ferramenta: Alicate
+Marca: Vonder
+Validade: 02/02/2022
+Quantidade: 1
+Data de entrada: 02/02/2022
+Data de saída: 20/02/2022
+Adicional: Igor nerá gay?
