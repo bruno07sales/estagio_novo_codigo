@@ -114,36 +114,48 @@ def main(page: ft.Page):
                 ft.ElevatedButton("Ler relatório completo", on_click=lambda e: ler_arquivos()),
                 ft.ElevatedButton("Gravar dados de nova ferramenta", on_click=gravar_arquivo),
 
-                # Campos de entrada para nova ferramenta
-                nome_usuario,
-                nome_ferramenta,
-                marca_ferramenta,
-                validade_ferramenta,
-                quantidade,
-
-                # Botões para aumentar e diminuir a quantidade
+                # Layout para os dados de inscrição e container à direita
                 ft.Row([
-                    ft.ElevatedButton("+", on_click=aumentar_quantidade),
-                    ft.ElevatedButton("-", on_click=diminuir_quantidade),
+                    # Coluna para os campos de entrada
+                    ft.Column(
+                        controls=[
+                            nome_usuario,
+                            nome_ferramenta,
+                            marca_ferramenta,
+                            validade_ferramenta,
+                            quantidade,
+
+                            # Botões para aumentar e diminuir a quantidade
+                            ft.Row([
+                                ft.ElevatedButton("+", on_click=aumentar_quantidade),
+                                ft.ElevatedButton("-", on_click=diminuir_quantidade),
+                            ]),
+
+                            data_entrada,
+                            data_saida,
+                            observacoes,
+                        ],
+                        width=450,  # Largura fixa para os campos de entrada
+                    ),
+
+                    # Container à direita para exibição dos dados com ListView para rolagem
+                    ft.Container(
+                        content=ft.ListView(
+                            controls=[dados_exibidos],
+                            expand=True
+                        ),
+                        height=1000,  # Altura fixa para a área de exibição
+                        width=550,   # Largura fixa para o container
+                        bgcolor=ft.colors.BLACK12,  # Cor de fundo
+                        border_radius=10,  # Raio da borda
+                        margin=ft.margin.only(left=20),  # Margem à esquerda
+                    ),
                 ]),
-
-                data_entrada,
-                data_saida,
-                observacoes,
-
-                # Exibe o conteúdo do arquivo com barra de rolagem
-                ft.Container(
-                    content=dados_exibidos,
-                    height=300,  # Limita a altura da área de exibição
-                    width=400,   # Define a largura
-                    bgcolor=ft.colors.BLACK12,  # Substitui por GREY_200
-                    border_radius=10,  # Corrige o uso de border_radius
-                ),
 
                 # Botão para encerrar
                 ft.ElevatedButton("Encerrar programa", on_click=encerrar_programa),
             ],
-            scroll="auto",  # Adiciona a barra de rolagem quando necessário
+            scroll="auto",  # Barra de rolagem automática
             expand=True  # Expande o layout conforme o conteúdo
         )
     )
